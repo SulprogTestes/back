@@ -14,14 +14,14 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@desenvolvimento
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_FRONT_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_BACK_TOKEN }}
         with:
           # Additional arguments for the sonarcloud scanner
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
-            -Dsonar.projectKey=SulprogTestes_front
+            -Dsonar.projectKey=SulprogTestes_back
             -Dsonar.organization=sulprogtestes
